@@ -39,4 +39,5 @@ The following ER diagram represents the database schema for the system:
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone  https://github.com/robiulislam99/SchoolManagementSystem
+   git clone https://github.com/robiulislam99/SchoolManagementSystem.git
+
