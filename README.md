@@ -24,19 +24,19 @@ This School Management System helps administrators and teachers efficiently mana
 ## Flowchart
 Below is the system's flowchart, illustrating the process flow:
 
-![Flowchart](file:///D:/Job%20Related%20-%20Everything/BDCOM%20interview%20documents/Copy%20of%20School%20Management%20System%20Flowchart.png)
+![Flowchart]( https://github.com/robiulislam99/SchoolManagementSystem/blob/master/SchoolManagementSystem/Image/School%20Management%20System%20Flowchart.png)
 
 ## Database Schema
 The following ER diagram represents the database schema for the system:
 
-![Database Schema](dbms%202.jpg)
+![Database Schema]( https://github.com/robiulislam99/SchoolManagementSystem/blob/master/SchoolManagementSystem/Image/dbms%202.jpg)
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
-- **Backend:** C++ (console-based)
+- **Backend:** C#
 - **Database:** SQL
 
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/school-management-system.git
+   git clone  https://github.com/robiulislam99/SchoolManagementSystem
