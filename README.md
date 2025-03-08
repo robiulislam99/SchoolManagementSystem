@@ -24,7 +24,7 @@ This School Management System helps administrators and teachers efficiently mana
 ## Flowchart
 Below is the system's flowchart, illustrating the process flow:
 
-![Flowchart](Copy%20of%20School%20Management%20System%20Flowchart.png)
+![Flowchart](file:///D:/Job%20Related%20-%20Everything/BDCOM%20interview%20documents/Copy%20of%20School%20Management%20System%20Flowchart.png)
 
 ## Database Schema
 The following ER diagram represents the database schema for the system:
