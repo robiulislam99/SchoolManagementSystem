@@ -32,10 +32,10 @@ This system provides separate modules for **Admin** and **Teacher**, making scho
 ## 🧩 System Overview
 
 ### 🔸 Flow Chart
-![Flow Chart]([link_to_flowchart_image](https://github.com/robiulislam99/SchoolManagementSystem/blob/master/SS%20of%20the%20functionality/School%20Management%20System%20Flowchart.png))
+![Flow Chart](https://github.com/robiulislam99/SchoolManagementSystem/blob/master/SS%20of%20the%20functionality/School%20Management%20System%20Flowchart.png)
 
 ### 🔸 Database Design 
-![Database Diagram]([link_to_database_image](https://github.com/robiulislam99/SchoolManagementSystem/blob/master/SS%20of%20the%20functionality/dbms%202.jpg))
+![Database Diagram](https://github.com/robiulislam99/SchoolManagementSystem/blob/master/SS%20of%20the%20functionality/dbms%202.jpg)
 
 ---
 
