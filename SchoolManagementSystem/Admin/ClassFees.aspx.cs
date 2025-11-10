@@ -22,37 +22,34 @@ namespace SchoolManagementSystem.Admin
             {
                 GetClass();
                 GetFees();
-
             }
         }
 
         private void GetClass()
         {
-            DataTable dt = fn.Fetch("Select * from class");
+            DataTable dt = fn.Fetch("Select * from Class");
             ddlClass.DataSource = dt;
-            ddlClass.DataTextField = "className";
-            ddlClass.DataValueField = "classId";
+            ddlClass.DataTextField = "ClassName";
+            ddlClass.DataValueField = "ClassId";
             ddlClass.DataBind();
             ddlClass.Items.Insert(0, "Select class");
         }
 
-        
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
                 string classVal = ddlClass.SelectedItem.Text;
-                DataTable dt = fn.Fetch("Select * from fees where classId='" + ddlClass.SelectedItem.Value + "' ");
+                DataTable dt = fn.Fetch("Select * from Fees where ClassId='" + ddlClass.SelectedItem.Value + "' ");
                 if (dt.Rows.Count == 0)
                 {
-                    string query = "Insert into fees values('"+ddlClass.SelectedItem.Value+"','"+txtFeeAmounts.Text.Trim()+"')";
+                    string query = "Insert into Fees (ClassId, FeesAmount) values('" + ddlClass.SelectedItem.Value + "','" + txtFeeAmounts.Text.Trim() + "')";
                     fn.Query(query);
                     lblMsg.Text = "Inserted successfully!";
                     lblMsg.CssClass = "alert alert-success";
                     ddlClass.SelectedIndex = 0;
                     txtFeeAmounts.Text = string.Empty;
                     GetFees();
-
                 }
                 else
                 {
@@ -63,13 +60,12 @@ namespace SchoolManagementSystem.Admin
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
-
             }
         }
 
         private void GetFees()
         {
-            DataTable dt = fn.Fetch(@"Select ROW_NUMBER() over(order by (Select 1)) as [Sr.No],f.feeId,c.className,f.feeAmounts from fees f inner join class c on c.classId=f.classId");
+            DataTable dt = fn.Fetch(@"Select ROW_NUMBER() over(order by (Select 1)) as [Sr.No],f.FeesId,c.ClassName,f.FeesAmount from Fees f inner join Class c on c.ClassId=f.ClassId");
             GridView1.DataSource = dt;
             GridView1.DataBind();
         }
@@ -90,8 +86,8 @@ namespace SchoolManagementSystem.Admin
         {
             try
             {
-                int feeId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-                fn.Query("Delete from fees where feeId='" + feeId + "'");
+                int feesId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+                fn.Query("Delete from Fees where FeesId='" + feesId + "'");
                 lblMsg.Text = "Fees Deleted successfully!";
                 lblMsg.CssClass = "alert alert-success";
                 GridView1.EditIndex = -1;
@@ -114,9 +110,9 @@ namespace SchoolManagementSystem.Admin
             try
             {
                 GridViewRow row = GridView1.Rows[e.RowIndex];
-                int feeId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+                int feesId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
                 string feeAmt = (row.FindControl("TextBox1") as TextBox).Text;
-                fn.Query("Update fees set feeAmounts='" + feeAmt.Trim() + "' where feeId='" + feeId + "'");
+                fn.Query("Update Fees set FeesAmount='" + feeAmt.Trim() + "' where FeesId='" + feesId + "'");
                 lblMsg.Text = "Fees updated successfully!";
                 lblMsg.CssClass = "alert alert-success";
                 GridView1.EditIndex = -1;
